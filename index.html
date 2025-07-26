@@ -43,6 +43,49 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+    }
+
+    .menu-button {
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .menu-button:hover {
+      transform: scale(1.2);
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .menu a {
+      display: block;
+      padding: 12px 20px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+
     .back-link {
       text-align: center;
       margin-top: 30px;
@@ -63,12 +106,38 @@
 </head>
 <body>
 
+   <div class="header">
+    <div><strong>Jaswanth Kumar</strong></div>
+    <div class="menu-button" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="https://jaswanth-kumar-2007.github.io/mywebsite/">Home</a>
+    <a href="https://jaswanth-kumar-2007.github.io/websiterequirement/" id="favours-link">My Favours</a>
+    <a href="https://www.linkedin.com/in/jaswanth-kumar-kamireddi-86ba09373/">Linkedin</a>
+    <a href="https://jaswanth-kumar-2007.github.io/Temporarypage/">Creations</a>
+  </div>
+
+   <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Close menu if clicked outside
+    window.addEventListener("click", function(e) {
+      if (!e.target.closest('.menu-button') && !e.target.closest('.menu')) {
+        document.getElementById("menu").style.display = "none";
+      }
+    });
+  </script>
+
   <div class="container">
     <h1>💖 My Favours</h1>
 
     <div class="section">
       <h2>🎮 Hobbies</h2>
-      <p>I love playing mobile games like BGMI, Free Fire, and other strategy games. Gaming improves my decision-making and keeps me entertained!</p>
+      <p>I love playing mobile games like Free Fire and I Play MineCraft. Gaming improves my decision-making and keeps me entertained!</p>
     </div>
 
     <div class="section">
@@ -76,9 +145,14 @@
       <p>I’m always excited to learn something new — especially in tech, design, and creative website building. I enjoy thinking out of the box and exploring the digital world!</p>
     </div>
 
+    <div class="section">
+      <h2>👸 Favourite Heroine</h2>
+      <p>My Favourite Heroine is Priyanka Mohan . I was Admire of her Eyes . I can't Express Her Beauty in Words</p>
+    </div>
+
     <div class="section photos">
-      <img src="https://images.unsplash.com/photo-1600962815705-6d32d4e768ba" alt="Mobile Gaming">
-      <img src="https://images.unsplash.com/photo-1537432376769-00a4c2f0f7e2" alt="Learning">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Minecraft_2024_cover_art.png/512px-Minecraft_2024_cover_art.png" alt="Minecraft">
+      <img src="https://teluguone.com/photos/uploadsExt/uploads/Priyanka%20Arul%20Mohan/Priyanka%20Arul%20Mohan%20Pictures/Priyanka-Arul-Mohan-Picture.jpg" alt="Priyanka Mohan">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Tech">
     </div>
 
